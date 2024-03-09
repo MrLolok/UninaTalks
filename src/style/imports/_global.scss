@@ -1,0 +1,53 @@
+@import 'satoshi';
+@import 'variables';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $fonts;
+    color: $primary-text-color;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: $bright-greek;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+}
+
+.col-sm {width: $percentage-sm;}
+.col-md {width: $percentage-md;}
+.col-lg {width: $percentage-lg;}
+.col-xl {width: $percentage-xl;}
+.col-xxl {width: $percentage-xxl;}
+.col-full {width: $percentage-full;}
