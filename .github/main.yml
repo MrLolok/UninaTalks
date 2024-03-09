@@ -6,19 +6,14 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Split branch name
-        env:
-          REPO: ${{ github.repository }}
-        id: split
-        run: echo "::set-output name=fragment::${REPO##*/}"
       - name: Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        uses: Ilshidur/action-discord@master
+        uses: Ilshidur/action-discord@0.3.2
         with:
           args: |
             📥 **NUOVO AGGIORNAMENTO**
-            *Progetto: ${{ steps.split.outputs.fragment }}*
+            *Progetto: ${{ EVENT_PAYLOAD.repository.full_name }}*
             `Autore: ${{ github.actor }}`
             
             ${{ github.event.commits[0].message }}
