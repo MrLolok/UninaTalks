@@ -1,0 +1,58 @@
+@import 'imports/global';
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    margin: auto;
+    padding: .5rem 1.5rem;
+    box-shadow: $shadow;
+    @include radius(10px);
+
+    h2 {
+        margin-bottom: 0;
+    }
+    
+    p {
+        margin-top: 0;
+    }
+
+    form {
+        label {
+            font-weight: 600;
+        }
+
+        .spacer {
+            margin: 1rem 0;
+        }
+
+        button {
+            display: block;
+            margin: 1rem auto;
+        }
+    }
+
+    .close {
+        cursor: pointer;
+        color: #d0d1e4;
+        float: right;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition-duration: .5s;
+        &:hover, &:focus {
+            color: $primary-text-color;
+        }
+    }
+}

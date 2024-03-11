@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.google_analytics_id %>"></script>
+        <script async>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '<%= htmlWebpackPlugin.options.google_analytics_id %>');
+        </script>
+
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css; script-src 'self' 'unsafe-inline' 'unsafe-eval'  https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net">
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +29,8 @@
         <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#5352ed">
+        <meta name="theme-color" content="#5352ed">
 
         <!-- Toastify.js -->
         <link rel="preload" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -29,36 +40,93 @@
         <script src="https://www.google.com/recaptcha/api.js"></script>
     </head>
     <body>
+        <div id="seminar-modal" class="modal">
+            <div class="modal-content">
+                <span onclick="setModalDisplay(false)" class="close">&times;</span>
+                <h2>Organizza un seminario</h2>
+                <p>Invia la tua proposta e verrai ricontattato il prima possibile.</p>
+                <form onsubmit="event.preventDefault()" id="seminar-form" action="/" method="post">
+                    <label for="fullname">Nome completo</label>
+                    <input type="text" name="fullname" placeholder="Mario Rossi" autocomplete="name">
+                    <label for="phone">Numero di telefono</label>
+                    <input type="tel" name="phone" placeholder="351 000 1234" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" autocomplete="tel">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="mario.rossi@email.com" autocomplete="email">
+                    <div class="spacer"></div>
+                    <label for="title">Titolo</label>
+                    <input type="text" name="title" placeholder="Es. Come costruire un robot">
+                    <label for="arguments">Argomenti trattati</label>
+                    <input type="text" name="arguments" placeholder="Es. Informatica, elettronica, medicina">
+                    <label for="description">Descrizione</label>
+                    <textarea name="description" placeholder="Descrizione dettagliata del seminario"></textarea>
+                    <button class="button g-recaptcha" data-sitekey="<%= htmlWebpackPlugin.options.google_recaptcha_key %>" data-callback="" data-action='submit'>Invia</button>
+                </form>
+            </div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Servizi</a></li>
+                <li><a href="#about">Chi siamo</a></li>
                 <li><img src="assets/images/logo.jpg" /></li>
                 <li><a href="#seminars">Seminari</a></li>
                 <li><a href="#contacts">Contatti</a></li>
             </ul>
         </nav>
         <section id="home">
-            <div class="jumbotron">
+            <div class="jumbotron col-full">
                 <div class="col-xl">
                     <h1>Riuniamo studenti</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
                     <a class="button big" href="#">Scopri di più ➜</a>
                 </div>
                 <div class="col-lg">
-                    <video width="120%" src="assets/images/output.webm" muted autoplay loop preload></video>
+                    <video width="120%" src="assets/images/users.webm" muted autoplay loop preload></video>
                 </div>
             </div>
-            <svg class="arrow animate-bounce" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"></path>
-            </svg>
+            <a class="col-full arrow-container" href="#about">
+                <svg class="arrow animate-bounce" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"></path>
+                </svg>
+            </a>
         </section>
-        <section id="services">
-            <h1 class="title">👨🏻‍💻 Servizi</h1>
+        <section id="about">
+            <h1 class="title">👨🏻‍💻 Chi siamo</h1>
+            <div class="col-full section-contents">
+                <div class="col-lg">
+                    <h2>Progetto</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                    <div class="goal">
+                        <h2>Il nostro obiettivo</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    </div>
+                    <div class="spacer"></div>
+                    <h2>Statistiche</h2>
+                    <div class="stats">
+                        <div class="stat">
+                            <p class="value">11.700+</p>
+                            <div class="spacer"></div>
+                            <h3 class="name">Potenziali auditori</h3>
+                        </div>
+                        <div class="stat">
+                            <p class="value">9</p>
+                            <div class="spacer"></div>
+                            <h3 class="name">Organizzatori</h3>
+                        </div>
+                        <div class="stat">
+                            <p class="value">1</p>
+                            <div class="spacer"></div>
+                            <h3 class="name">Seminari organizzati</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <img src="assets/images/community.png" alt="Community">
+                </div>
+            </div>
         </section>
         <section id="seminars">
             <h1 class="title">🎓 Seminari</h1>
-            <div class="col-full">
+            <div class="col-full section-contents">
                 <div class="col-md slideshow">
                     <div class="slideshow-container">
                         <div class="slide">
@@ -120,7 +188,7 @@
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path></svg>La gloria!
                         </li>
                     </ul>
-                    <button class="seminar-creation-button button">Mettiti in gioco</button>
+                    <button onclick="setModalDisplay(true)" class="seminar-creation-button button">Mettiti in gioco</button>
                 </div>
             </div>
         </section>

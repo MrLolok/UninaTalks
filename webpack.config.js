@@ -27,7 +27,8 @@ const config = {
             template: './src/pages/home.html',
             chunks: ["home"],
             minify: true,
-            google_recaptcha_key: process.env.GOOGLE_RECAPTCHA_KEY
+            google_recaptcha_key: process.env.GOOGLE_RECAPTCHA_KEY,
+            google_analytics_id: process.env.GOOGLE_ANALYTICS_ID
         }),
         new CopyPlugin({
             patterns: [{

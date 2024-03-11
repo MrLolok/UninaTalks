@@ -1,5 +1,7 @@
 @import 'mixins';
 @import 'animations';
+@import 'placeholders';
+@import 'scrollbar';
 @import 'satoshi';
 @import 'variables';
 
@@ -60,7 +62,7 @@ textarea {
     min-height: 100px;
 }
 
-input[type="email"], input[type="text"], input:not([type]), select, textarea {
+input[type="email"], input[type="text"], input[type="tel"], input:not([type]), select, textarea {
     width: 100%;
 }
 
@@ -82,7 +84,7 @@ section {
 }
 
 .spacer {
-    background-color: #e7e8fb;
+    background-color: $light-white;
     height: 2px;
     width: 100%;
 }

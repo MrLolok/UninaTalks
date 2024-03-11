@@ -1,0 +1,9 @@
+@import 'variables';
+
+::placeholder {
+    font-family: $fonts;
+}
+  
+::-ms-input-placeholder {
+    font-family: $fonts;
+}
