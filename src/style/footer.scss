@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0 5%;
+    background-color: #1f2937;
+
+    p, a {
+        color: rgb(107, 114, 128);
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

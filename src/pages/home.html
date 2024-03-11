@@ -46,5 +46,66 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"></path>
             </svg>
         </section>
+        <section id="services">
+            <h1 class="title">👨🏻‍💻 Servizi</h1>
+        </section>
+        <section id="seminars">
+            <h1 class="title">🎓 Seminari</h1>
+            <div class="slideshow-container">
+                <div class="slide">
+                  <div class="index">1 / 3</div>
+                  <img src="img_nature_wide.jpg" style="width:100%">
+                  <div class="text">Caption Text</div>
+                </div>
+                <div class="slide">
+                  <div class="index">2 / 3</div>
+                  <img src="img_snow_wide.jpg" style="width:100%">
+                  <div class="text">Caption Two</div>
+                </div>
+                <div class="slide">
+                  <div class="index">3 / 3</div>
+                  <img src="img_mountains_wide.jpg" style="width:100%">
+                  <div class="text">Caption Three</div>
+                </div>
+                <a class="prev" onclick="changeSlideIndex(-1)">❮</a>
+                <a class="next" onclick="changeSlideIndex(1)">❯</a>
+                
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="setSlideIndex(1)"></span> 
+                <span class="dot" onclick="setSlideIndex(2)"></span> 
+                <span class="dot" onclick="setSlideIndex(3)"></span> 
+            </div>
+        </section>
+        <section id="contacts">
+            <h1 class="title">☎️ Contatti</h1>
+            <div class="contacts-wrapper col-full">
+                <div class="col-md" id="message">
+                    <h2>Scrivici un messaggio</h2>
+                    <p>Per le richieste di prenotazione o realizzazione di un seminario, recati nella sezione apposita.</p>
+                    <form onsubmit="event.preventDefault()" id="contact-form" action="/" method="post">
+                        <input type="text" name="name" placeholder="Nome" autocomplete="name">
+                        <input type="text" name="surname" placeholder="Cognome">
+                        <input type="email" name="email" placeholder="Email" autocomplete="email">
+                        <textarea name="message" placeholder="Messaggio"></textarea>
+                        <span class="col-full">Risponderemo entro 48 ore</span>
+                        <input type="submit" value="Invia" class="button" id="send">
+                    </form>
+                </div>
+                <div class="col-md" id="social">
+                    <h2>Social</h2>
+                    <ul>
+                        <li><img loading="lazy" width="40px" height="40px" src="assets/images/social/instagram.webp" alt="Instagram social icon"><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><img loading="lazy" width="40px" height="40px" src="assets/images/social/discord.webp" alt="Discord social icon"><a href="https://discord.gg/KwrE4bBJGb" target="_blank">Discord</a></li>
+                        <li><img loading="lazy" width="40px" height="40px" src="assets/images/social/email.webp" alt="G-Mail social icon"><a href="mailto:info@uninatalks.it">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>© 2024 UninaTalks</p>
+            <a target="_blank" href="https://www.unina.it/">Università degli Studi di Napoli - Federico II</a>
+        </footer>
     </body>
 </html>

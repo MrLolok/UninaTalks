@@ -1,7 +1,27 @@
 @import 'imports/global';
 @import 'navbar';
+@import 'footer';
+@import 'slideshow';
 
 section {
+    position: relative;
+    margin-top: 4rem;
+    &:nth-of-type(1) {
+        margin-top: 0;
+    }
+
+    h1.title {
+        width: 100%;
+        display: block;
+        position: relative;
+        margin: 4rem 0;
+        font-size: 3rem;
+        border-bottom: 5px solid #e7e8fb;
+        box-shadow: $shadow;
+        padding: 0 12px;
+        @include radius(16px);
+    }
+
     &#home {
         background-image: url('../../assets/waves.svg');
         background-repeat: no-repeat;
@@ -11,7 +31,7 @@ section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 10vh 10% 0;
+            margin: 10vh 0 0;
             width: 100%;
             height: 80vh;
             color: white;
@@ -39,6 +59,52 @@ section {
             margin: 0 auto;
             color: $secondary-text-color;
             width: 32px;
+        }
+    }
+
+    &#contacts {
+        .contacts-wrapper {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #message {
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                span {
+                    font-size: .75rem;
+                    display: block;
+                    text-align: center;
+                    font-style: italic;
+                    margin: .75rem 0 0;
+                }
+            }
+
+            input:not([type]), input[type="text"] {
+                width: calc(50% - .5rem);
+            }
+        }
+
+        #social {
+            li {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                margin: 20px 0;
+                background-color: rgba(82, 121, 237, 0.1);
+                border-radius: 20px;
+                padding: 0 16px;
+                color: white;
+
+                a {
+                    color: $saturated-sky;
+                    font-weight: bold;
+                    font-size: 1.25rem;
+                }
+            }
         }
     }
 }

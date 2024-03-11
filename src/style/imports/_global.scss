@@ -35,17 +35,50 @@ ul {
     padding: 0;
 }
 
+input, textarea, select {
+    font-size: 1rem;
+    background: white;
+    font-family: $fonts;
+    margin: .75rem 0;
+}
+
+input:not(input[type="submit"]), select, textarea {
+    border: none;
+    color: $primary-text-color;
+    padding: .5rem 1rem;
+    transition-duration: .2s;
+    box-shadow: $shadow;
+    @include radius(8px);
+
+    &:focus {
+        box-shadow: 0px 5px 10px 5px rgba(94, 90, 211, 0.15)
+    }
+}
+
 textarea {
     resize: vertical;
     min-height: 100px;
 }
 
+input[type="email"], input[type="text"], input:not([type]), select, textarea {
+    width: 100%;
+}
+
+input[type="submit"] {
+    font-size: 1rem;
+    display: block;
+    margin: 1.25rem auto;
+}
+
 section {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
     min-height: 100vh;
     max-width: 100%;
     min-width: 100%;
+    padding: 0 10%;
 }
 
 .button {

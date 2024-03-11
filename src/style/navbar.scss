@@ -1,6 +1,7 @@
 @import 'imports/global';
 
 nav {
+    z-index: 100;
     background-color: white;
     display: flex;
     align-items: center;
@@ -29,7 +30,7 @@ nav {
             padding: 0.5rem 1.5rem;
             margin-top: 2.2rem;
             box-shadow: $shadow;
-            border-bottom: 5px solid #c5bed7;
+            border-bottom: 5px solid #e0d8f4;
             @include radius(25px, true);
         }
 
