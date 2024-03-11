@@ -1,3 +1,5 @@
+@import 'mixins';
+@import 'animations';
 @import 'satoshi';
 @import 'variables';
 
@@ -41,8 +43,31 @@ textarea {
 section {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.button {
+    cursor: pointer;
+    text-align: center;
+    background-color: $saturated-sky;
+    border: none;
+    border-bottom: 3px solid $bright-greek;
+    padding: .5rem 2.5rem;
+    color: white;
+    font-weight: bold;
+    transition-duration: .2s;
+    @include radius(50px, false);
+
+    &:hover:not(input[type="submit"]) {
+        transform: translateY(-10px);
+    }
+
+    &.big {
+        font-size: 24px;
+        padding: .75rem 2.5rem;
+    }
 }
 
 .col-sm {width: $percentage-sm;}

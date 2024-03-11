@@ -1,0 +1,11 @@
+@mixin radius($radius, $only-bottom: false) {
+    @if $only-bottom {
+        -webkit-border-radius: 0 0 $radius $radius;
+        -moz-border-radius: 0 0 $radius $radius;
+        border-radius: 0 0 $radius $radius;
+    } @else {
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+    }
+}
