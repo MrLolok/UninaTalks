@@ -35,7 +35,7 @@ ul {
     padding: 0;
 }
 
-input, textarea, select {
+input, textarea, select, button {
     font-size: 1rem;
     background: white;
     font-family: $fonts;
@@ -79,6 +79,12 @@ section {
     max-width: 100%;
     min-width: 100%;
     padding: 0 10%;
+}
+
+.spacer {
+    background-color: #e7e8fb;
+    height: 2px;
+    width: 100%;
 }
 
 .button {

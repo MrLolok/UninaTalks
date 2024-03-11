@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+require('dotenv').config({ path: './.env' }); 
 
 const isProduction = process.env.NODE_ENV == 'production';
 const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
@@ -25,13 +26,17 @@ const config = {
             filename: 'index.html',
             template: './src/pages/home.html',
             chunks: ["home"],
-            minify: true
+            minify: true,
+            google_recaptcha_key: process.env.GOOGLE_RECAPTCHA_KEY
         }),
         new CopyPlugin({
             patterns: [{
                     from: "assets",
                     to: "assets"
-                }
+                },
+                {
+                    from: "src/php/"
+                },
             ]
         })
     ],
