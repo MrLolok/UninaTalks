@@ -152,22 +152,26 @@
 
     section {
         &#home {
-            .jumbotron div.col-xl {
-                width: 100%;
-                p {
-                    max-width: 100%;
-                }
-            }
+            .jumbotron {
+                margin: 0;
 
-            .jumbotron div.col-lg {
-                position: absolute;
-                width: 100%;
-                top: 25%;
-                left: 0;
-                z-index: -1;
-            
-                video {
+                div.col-xl {
                     width: 100%;
+                    p {
+                        max-width: 100%;
+                    }
+                }
+
+                div.col-lg {
+                    position: absolute;
+                    width: 100%;
+                    top: 25%;
+                    left: 0;
+                    z-index: -1;
+                
+                    video {
+                        width: 100%;
+                    }
                 }
             }
         }
