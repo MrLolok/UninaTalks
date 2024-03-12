@@ -1,11 +1,23 @@
+const DELAY = 5000;
 let slide = 1;
+
+const getSlideChangeTask = (): NodeJS.Timeout => {
+    return setTimeout(() => showSlide(++slide), DELAY);
+}
+let runnable: NodeJS.Timeout = getSlideChangeTask();
 
 export const changeSlideIndex = (index: number): void => {
     showSlide(slide += index);
+    if (runnable)
+        clearTimeout(runnable);
+    runnable = getSlideChangeTask();
 }
 
 export const setSlideIndex = (index: number): void => {
     showSlide(slide = index);
+    if (runnable)
+        clearTimeout(runnable);
+    runnable = getSlideChangeTask();
 }
 
 export const setSlidesCounter = (): void => {

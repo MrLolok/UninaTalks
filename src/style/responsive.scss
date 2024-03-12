@@ -134,15 +134,19 @@
 }
 
 @media screen and (max-width: 480px) {
-    nav li {
-        margin: 0 0.75rem;
-        img {
-            margin-top: 60px;
-            position: absolute;
-            top: 0;
-            width: 180px;
-            left: calc(50% - 90px);
-            height: auto;
+    nav {
+        height: 50px;
+        li {
+            margin: 0px 0.5rem;
+            font-size: .85rem;
+            img {
+                position: absolute;
+                margin-top: 50px;
+                width: 150px;
+                height: auto;
+                left: calc(50% - 75px);
+                top: 0;
+            }
         }
     }
 
@@ -167,6 +171,30 @@
                 }
             }
         }
+        
+        &#about .section-contents {
+            #information .stats {
+                gap: 5vw;
+    
+                .stat {
+                    width: 80%;
+                }
+            }
+
+            #image {
+                width: 80%;
+            }
+        }
+
+        &#seminars .section-contents .slideshow {
+            width: 90%;
+            .slide {
+                box-shadow: $shadow;
+            }
+            .col-lg {
+                width: 100%;
+            }
+        }
 
         &#contacts .contacts-wrapper {
             flex-wrap: wrap;
@@ -179,19 +207,6 @@
 }
 
 @media screen and (max-width: 320px) {
-    nav {
-        height: 50px;
-        li {
-            margin: 0px 0.5rem;
-            font-size: .85rem;
-            img {
-                margin-top: 50px;
-                width: 150px;
-                left: calc(50% - 75px);
-            }
-        }
-    }
-
     section {
         padding: 0 7.5%;
         
@@ -210,29 +225,9 @@
             }
         }
 
-        &#about .section-contents {
-            #information .stats {
-                gap: 5vw;
-    
-                .stat {
-                    width: 80%;
-                }
-            }
-
-            #image {
-                width: 80%;
-            }
-        }
-
         &#seminars .section-contents {
             gap: 10vw;
             .slideshow {
-                width: 100%;
-                .slide {
-                    box-shadow: $shadow;
-                }
-            }
-            .col-lg {
                 width: 100%;
             }
         }
