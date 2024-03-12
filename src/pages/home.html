@@ -37,7 +37,7 @@
         <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer async></script>
         <!-- Google ReCaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async></script>
     </head>
     <body>
         <div id="seminar-modal" class="modal">
@@ -67,7 +67,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Chi siamo</a></li>
-                <li><img src="assets/images/logo.jpg" /></li>
+                <li><img alt="Logo UninaTalks" src="assets/images/logo.webp" /></li>
                 <li><a href="#seminars">Seminari</a></li>
                 <li><a href="#contacts">Contatti</a></li>
             </ul>
@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div class="col-md" id="image">
-                    <img src="assets/images/community.png" alt="Community">
+                    <img loading="lazy" src="assets/images/community.webp" alt="Community">
                 </div>
             </div>
         </section>
@@ -131,7 +131,7 @@
                     <div class="slideshow-container">
                         <div class="slide fade">
                             <div class="index"></div>
-                            <img src="assets/images/seminars/minecraft.jpg">
+                            <img loading="lazy" alt="Copertina seminario" src="assets/images/seminars/minecraft.webp">
                             <div class="explore">
                                 <h3>Esplora ➜</h3>
                                 <p>Come creare un server Minecraft</p>
@@ -140,7 +140,7 @@
                         </div>
                         <div class="slide fade">
                             <div class="index"></div>
-                            <img src="assets/images/seminars/minecraft.jpg">
+                            <img loading="lazy" alt="Copertina seminario" src="assets/images/seminars/minecraft.webp">
                             <div class="explore">
                                 <h3>Esplora ➜</h3>
                                 <p>Come creare un server Minecraft</p>
@@ -149,15 +149,15 @@
                         </div>
                         <div class="slide fade">
                             <div class="index"></div>
-                            <img src="assets/images/seminars/minecraft.jpg">
+                            <img loading="lazy" alt="Copertina seminario" src="assets/images/seminars/minecraft.webp">
                             <div class="explore">
                                 <h3>Esplora ➜</h3>
                                 <p>Come creare un server Minecraft</p>
                             </div>
                             <div class="overlay"></div>
                         </div>
-                        <a class="prev" onclick="changeSlideIndex(-1)">❮</a>
-                        <a class="next" onclick="changeSlideIndex(1)">❯</a>
+                        <button href="" class="prev" onclick="changeSlideIndex(-1)">❮</button>
+                        <button href="" class="next" onclick="changeSlideIndex(1)">❯</button>
                     </div>
                     <div class="dots">
                         <span class="dot" onclick="setSlideIndex(1)"></span> 
