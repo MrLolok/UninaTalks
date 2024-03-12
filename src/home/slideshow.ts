@@ -8,6 +8,15 @@ export const setSlideIndex = (index: number): void => {
     showSlide(slide = index);
 }
 
+export const setSlidesCounter = (): void => {
+    const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slide");
+    const total: number = slides.length;
+    for (let i = 0; i < slides.length; i++) {
+        const index: Element = slides[i].getElementsByClassName("index")[0];
+        index.innerHTML = `${i + 1} / ${total}`;
+    }
+}
+
 export const showSlide = (index: number): void => {
     const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slide");
     const dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dot");

@@ -1,0 +1,244 @@
+@media screen and (max-width: 1400px) {
+    section#home .jumbotron h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .button.big {
+        font-size: 1.2rem;
+    }
+    
+    section {
+        padding: 0 5%;
+
+        h1.title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        &#home .jumbotron {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin: 2rem 0 3rem;
+                line-height: 24px;
+                max-width: 90%;
+            }
+        }
+
+        &#about .stats .stat {
+            padding: 0.5rem 1.2rem;
+
+            .value {
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+        }
+
+        &#seminars .slideshow {
+            width: 40%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav li {
+        margin: 0 1.5rem;
+    }
+
+    section {
+        &#about .stats {
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 5vw;
+
+            .stat {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        h1.title {
+            font-size: 2rem;
+        }
+
+        &#about .section-contents {
+            flex-wrap: wrap;
+            gap: 5vw;
+            
+            #information {
+                width: 100%;
+
+                .stats {
+                    gap: 3vw;
+        
+                    .stat {
+                        width: 30%;
+                        padding: 0 1.5rem;
+                    }
+                }
+            }
+
+            #image {
+                width: 50%;
+            }
+        }
+
+        &#seminars .slideshow {
+            width: 50%;
+        }
+
+        &#contacts .contacts-wrapper {
+            div.col-md {
+                width: 50%;
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav li {
+        margin: 0 1rem;
+        img {
+            height: 70px;
+        }
+    }
+
+    section {
+        &#seminars {
+            .section-contents {
+                flex-wrap: wrap;
+                gap: 5vw;
+
+                .slideshow {
+                    width: 75%;
+                    .dots {
+                        margin: 3.5rem 0 3.5rem 2rem;
+                    }
+                }
+
+                .col-lg {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav li {
+        margin: 0 0.75rem;
+        img {
+            margin-top: 60px;
+            position: absolute;
+            top: 0;
+            width: 180px;
+            left: calc(50% - 90px);
+            height: auto;
+        }
+    }
+
+    section {
+        &#home {
+            .jumbotron div.col-xl {
+                width: 100%;
+                p {
+                    max-width: 100%;
+                }
+            }
+
+            .jumbotron div.col-lg {
+                position: absolute;
+                width: 100%;
+                top: 25%;
+                left: 0;
+                z-index: -1;
+            
+                video {
+                    width: 100%;
+                }
+            }
+        }
+
+        &#contacts .contacts-wrapper {
+            flex-wrap: wrap;
+
+            div.col-md {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    nav {
+        height: 50px;
+        li {
+            margin: 0px 0.5rem;
+            font-size: .85rem;
+            img {
+                margin-top: 50px;
+                width: 150px;
+                left: calc(50% - 75px);
+            }
+        }
+    }
+
+    section {
+        padding: 0 7.5%;
+        
+        &#home {
+            .jumbotron {
+                .button {
+                    display: block;
+                    max-width: 240px;
+                    margin: 0 auto;
+                }
+
+                div.col-lg {
+                    top: 30%;
+                    left: 0;
+                }
+            }
+        }
+
+        &#about .section-contents {
+            #information .stats {
+                gap: 5vw;
+    
+                .stat {
+                    width: 80%;
+                }
+            }
+
+            #image {
+                width: 80%;
+            }
+        }
+
+        &#seminars .section-contents {
+            gap: 10vw;
+            .slideshow {
+                width: 100%;
+                .slide {
+                    box-shadow: $shadow;
+                }
+            }
+            .col-lg {
+                width: 100%;
+            }
+        }
+
+        &#contacts #message input:not([type]), &#contacts #message input[type="text"] {
+            width: 100%;
+        }
+    }
+}

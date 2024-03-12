@@ -15,7 +15,7 @@ section {
         width: 100%;
         display: block;
         position: relative;
-        margin: 0 0 4rem;
+        margin-bottom: 4rem;
         font-size: 3rem;
         border-bottom: 5px solid $light-white;
         box-shadow: $shadow;
@@ -73,8 +73,14 @@ section {
     }
 
     &#about {
-        div:nth-of-type(2) img {
-            width: 100%;
+        #image {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            
+            img {
+                width: 100%;
+            }
         }
 
         .goal, .stats .stat {
@@ -194,3 +200,6 @@ section {
         }
     }
 }
+
+/** RESPONSIVE STYLE **/
+@import 'responsive';

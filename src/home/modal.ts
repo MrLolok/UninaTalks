@@ -7,7 +7,7 @@ export const setModalDisplay = (show: boolean): void => {
         return;
     }
     if (show)
-        modal.style.display = "block";
+        modal.style.display = "flex";
     else
         modal.style.display = "none";
 }

@@ -15,3 +15,10 @@ footer {
         text-decoration: underline;
     }
 }
+
+@media screen and (max-width: 480px) {
+    footer {
+        height: 2.5rem;
+        font-size: .75rem;
+    }
+}
