@@ -34,8 +34,10 @@ const config = {
             patterns: [{
                     from: "assets",
                     to: "assets",
+                    noErrorOnMissing: true,
                     globOptions: {
-                        ignore: ["static/**/*"]
+                        dot: true,
+                        ignore: ["**/.htaccess", "**/browserconfig.xml", "**/sitemap.xml"]
                     }
                 },
                 {
