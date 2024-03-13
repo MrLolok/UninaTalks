@@ -34,7 +34,9 @@ const config = {
             patterns: [{
                     from: "assets",
                     to: "assets",
-                    ignore: ["static/**/*"]
+                    globOptions: {
+                        ignore: ["static/**/*"]
+                    }
                 },
                 {
                     from: "assets/static/"
