@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="it">
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/head.html") %>
+    <body>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/modals/seminar-booking.html") %>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/navbar.html") %>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/footer.html") %>
+    </body>
+</html>

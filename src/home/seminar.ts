@@ -1,5 +1,5 @@
 import { notify } from "../notifier";
-const ID = "seminar-form";
+const ID = "seminar-creation-form";
 export async function sendSeminarProposal(): Promise<void> {
     const form: HTMLFormElement = document.getElementById(ID) as HTMLFormElement;
     if (!form) {

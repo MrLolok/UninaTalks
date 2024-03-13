@@ -1,77 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.google_analytics_id %>"></script>
-        <script async>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '<%= htmlWebpackPlugin.options.google_analytics_id %>');
-        </script>
-
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css; script-src 'self' 'unsafe-inline' 'unsafe-eval'  https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net">
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Open Graph -->
-        <meta property="og:title" content="UninaTalks | Riuniamo studenti che condividono gli stessi interessi" />
-        <meta property="og:description" content="Scopri seminari organizzati dagli studenti per gli studenti all'Università Federico II. Inspirati, impara e connettiti con il meglio della comunità studentesca." />
-        <meta property="og:url" content="https://uninatalks.it" />
-        <meta property="og:image" content="https://uninatalks.it/assets/icons/open-graph.webp" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="it_IT" />
-
-        <title>UninaTalks | Riuniamo studenti che condividono gli stessi interessi</title>
-        <meta name="description" content="Scopri seminari organizzati dagli studenti per gli studenti all'Università Federico II. Inspirati, impara e connettiti con il meglio della comunità studentesca.">
-        <meta name="author" content="Lorenzo Angelino">
-
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-        <meta name="msapplication-TileColor" content="#5352ed">
-        <meta name="theme-color" content="#5352ed">
-
-        <!-- Toastify.js -->
-        <link rel="preload" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-        <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer async></script>
-        <!-- Google ReCaptcha -->
-        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async></script>
-    </head>
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/head.html") %>
     <body>
-        <div id="seminar-modal" class="modal">
-            <div class="modal-content">
-                <span onclick="setModalDisplay(false)" class="close">&times;</span>
-                <h2>Organizza un seminario</h2>
-                <p>Invia la tua proposta e verrai ricontattato il prima possibile.</p>
-                <form onsubmit="event.preventDefault()" id="seminar-form" action="/" method="post">
-                    <label for="fullname">Nome completo</label>
-                    <input type="text" name="fullname" placeholder="Mario Rossi" autocomplete="name">
-                    <label for="phone">Numero di telefono</label>
-                    <input type="tel" name="phone" placeholder="351 000 1234" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" autocomplete="tel">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="mario.rossi@email.com" autocomplete="email">
-                    <div class="spacer"></div>
-                    <label for="title">Titolo</label>
-                    <input type="text" name="title" placeholder="Es. Come costruire un robot">
-                    <label for="arguments">Argomenti trattati</label>
-                    <input type="text" name="arguments" placeholder="Es. Informatica, elettronica, medicina">
-                    <label for="description">Descrizione</label>
-                    <textarea name="description" placeholder="Descrizione dettagliata del seminario"></textarea>
-                    <button class="button g-recaptcha" data-sitekey="<%= htmlWebpackPlugin.options.google_recaptcha_key %>" data-callback="sendSeminarProposal" data-action='submit'>Invia</button>
-                </form>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Chi siamo</a></li>
-                <li><img alt="Logo UninaTalks" src="assets/images/logo.webp" /></li>
-                <li><a href="#seminars">Seminari</a></li>
-                <li><a href="#contacts">Contatti</a></li>
-            </ul>
-        </nav>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/modals/seminar-creation.html") %>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/navbar.html") %>
         <section id="home">
             <div class="jumbotron col-full">
                 <div class="col-xl">
@@ -204,7 +136,7 @@
                         <input type="email" name="email" placeholder="Email" autocomplete="email">
                         <textarea name="message" placeholder="Messaggio"></textarea>
                         <span class="col-full">Risponderemo entro 48 ore</span>
-                        <button class="button g-recaptcha" data-sitekey="<%= htmlWebpackPlugin.options.google_recaptcha_key %>" data-callback="sendContactMessage" data-action='submit'>Invia</button>
+                        <button class="button g-recaptcha" data-sitekey="<%= htmlWebpackPlugin.options.GOOGLE_RECAPTCHA_KEY %>" data-callback="sendContactMessage" data-action='submit'>Invia</button>
                     </form>
                 </div>
                 <div class="col-md" id="social">
@@ -217,9 +149,6 @@
                 </div>
             </div>
         </section>
-        <footer>
-            <p>© 2024 UninaTalks - <a target="_blank" href="https://www.unina.it/">Università degli Studi di Napoli - Federico II</a></p>
-            <p>Made by <a target="_blank" href="https://lorenzoangelino.it/">LorenzoAngelino.it</a></p>
-        </footer>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/footer.html") %>
     </body>
 </html>

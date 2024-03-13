@@ -1,4 +1,4 @@
-const ID: string = "seminar-modal";
+const ID: string = "seminar-creation-modal";
 const modal: HTMLElement | null = document.getElementById(ID);
 
 export const setModalDisplay = (show: boolean): void => {

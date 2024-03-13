@@ -4,14 +4,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-require('dotenv').config({ path: './.env' }); 
+require('dotenv').config({ path: './.env' });
 
 const isProduction = process.env.NODE_ENV == 'production';
 const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
+const HTMLComponentsPath = path.resolve(__dirname, "./src/components/");
 
 const config = {
     entry: {
-        home: './src/home/home.ts',
+        home: './src/home/app.home.ts',
+        seminar: './src/seminar/app.seminar.ts',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -27,8 +29,18 @@ const config = {
             template: './src/pages/home.html',
             chunks: ["home"],
             minify: true,
-            google_recaptcha_key: process.env.GOOGLE_RECAPTCHA_KEY,
-            google_analytics_id: process.env.GOOGLE_ANALYTICS_ID
+            HTML_COMPONENTS_PATH: HTMLComponentsPath,
+            GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY,
+            GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'seminar.html',
+            template: './src/pages/seminar.html',
+            chunks: ["seminar"],
+            minify: true,
+            HTML_COMPONENTS_PATH: HTMLComponentsPath,
+            GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY,
+            GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
         }),
         new CopyPlugin({
             patterns: [{
@@ -52,11 +64,11 @@ const config = {
     optimization: {
         splitChunks: {
             cacheGroups: {
-                homeStyles: {
+                commonStyles: {
                     type: "css/mini-extract",
-                    name: "styles_home",
+                    name: "styles_common",
                     chunks: (chunk) => {
-                        return chunk.name === "home";
+                        return chunk.name === "home" || chunk.name === "seminar";
                     },
                     enforce: true,
                 }

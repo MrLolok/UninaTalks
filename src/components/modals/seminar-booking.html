@@ -1,0 +1,18 @@
+<div id="seminar-booking-modal" class="modal">
+    <div class="modal-content">
+        <span onclick="setModalDisplay(false)" class="close">&times;</span>
+        <h2>Prenotati per questo seminario</h2>
+        <p>Invia la tua richiesta di partecipazione prima che si esauriscano i posti.</p>
+        <form onsubmit="event.preventDefault()" id="seminar-booking-form" action="/" method="post">
+            <label for="fullname">Nome completo</label>
+            <input type="text" name="fullname" placeholder="Mario Rossi" autocomplete="name">
+            <label for="phone">Numero di telefono</label>
+            <input type="tel" name="phone" placeholder="351 000 1234" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" autocomplete="tel">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="mario.rossi@email.com" autocomplete="email">
+            <label for="description">Note (Facoltativo)</label>
+            <textarea name="description" placeholder="Aggiungi note che dovremo tenere in considerazione"></textarea>
+            <button class="button g-recaptcha" data-sitekey="<%= htmlWebpackPlugin.options.GOOGLE_RECAPTCHA_KEY %>" data-callback="sendSeminarProposal" data-action='submit'>Invia</button>
+        </form>
+    </div>
+</div>

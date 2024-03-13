@@ -1,0 +1,39 @@
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.GOOGLE_ANALYTICS_ID %>"></script>
+    <script async>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<%= htmlWebpackPlugin.options.GOOGLE_ANALYTICS_ID %>');
+    </script>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css; script-src 'self' 'unsafe-inline' 'unsafe-eval'  https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph -->
+    <meta property="og:title" content="UninaTalks | Riuniamo studenti che condividono gli stessi interessi" />
+    <meta property="og:description" content="Scopri seminari organizzati dagli studenti per gli studenti all'Università Federico II. Inspirati, impara e connettiti con il meglio della comunità studentesca." />
+    <meta property="og:url" content="https://uninatalks.it" />
+    <meta property="og:image" content="https://uninatalks.it/assets/icons/open-graph.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+
+    <title>UninaTalks | Riuniamo studenti che condividono gli stessi interessi</title>
+    <meta name="description" content="Scopri seminari organizzati dagli studenti per gli studenti all'Università Federico II. Inspirati, impara e connettiti con il meglio della comunità studentesca.">
+    <meta name="author" content="Lorenzo Angelino">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#5352ed">
+    <meta name="theme-color" content="#5352ed">
+
+    <!-- Toastify.js -->
+    <link rel="preload" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer async></script>
+    <!-- Google ReCaptcha -->
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async></script>
+</head>
