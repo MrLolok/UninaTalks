@@ -33,7 +33,11 @@ const config = {
         new CopyPlugin({
             patterns: [{
                     from: "assets",
-                    to: "assets"
+                    to: "assets",
+                    ignore: ["static/**/*"]
+                },
+                {
+                    from: "assets/static/"
                 },
                 {
                     from: "src/php/"
