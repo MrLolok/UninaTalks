@@ -5,10 +5,11 @@ import "../style/style.scss";
 import { setModalDisplay } from "./modal"
 import { sendContactMessage } from "./contact"
 import { sendSeminarProposal } from "./seminar"
-import { changeSlideIndex, setSlideIndex, setSlidesCounter, showSlide } from "./slideshow"
+import { changeSlideIndex, setSlideIndex, setSlidesCounter, setSlidesRedirect, showSlide } from "./slideshow"
 
 /** INITIALIZE AND REGISTER FUNCTIONS */
 setSlidesCounter();
+setSlidesRedirect();
 declare global {
     interface Window {
         setModalDisplay: any

@@ -29,6 +29,16 @@ export const setSlidesCounter = (): void => {
     }
 }
 
+export const setSlidesRedirect = (): void => {
+    const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        const element: HTMLElement = slides[i] as HTMLElement;
+        const redirect: string | null = element.getAttribute("data-redirect");
+        if (redirect)
+            element.onclick = () => window.location.href = `${redirect}`
+    }
+}
+
 export const showSlide = (index: number): void => {
     const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slide");
     const dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dot");
