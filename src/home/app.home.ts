@@ -2,14 +2,18 @@
 import "../style/style.scss";
 
 /** IMPORTS **/
-import { setModalDisplay } from "./modal"
+import { setAnchorsLink } from "../anchors"
+import { setModalDisplay, addModalCloseListener } from "../modal"
 import { sendContactMessage } from "./contact"
 import { sendSeminarProposal } from "./seminar"
 import { changeSlideIndex, setSlideIndex, setSlidesCounter, setSlidesRedirect, showSlide } from "./slideshow"
 
 /** INITIALIZE AND REGISTER FUNCTIONS */
+const MODAL_ID = "seminar-creation-modal";
+addModalCloseListener(MODAL_ID);
 setSlidesCounter();
 setSlidesRedirect();
+setAnchorsLink();
 declare global {
     interface Window {
         setModalDisplay: any

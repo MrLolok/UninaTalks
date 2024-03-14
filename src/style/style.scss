@@ -7,9 +7,6 @@
 section {
     position: relative;
     margin-top: 4rem;
-    &:nth-of-type(1) {
-        margin-top: 0;
-    }
 
     h1.title {
         width: 100%;
@@ -30,6 +27,7 @@ section {
     }
 
     &#home {
+        margin-top: 0;
         background-image: url('../../assets/waves.svg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -196,6 +194,82 @@ section {
                     font-weight: bold;
                     font-size: 1.25rem;
                 }
+            }
+        }
+    }
+
+    &#seminar {
+        .col-full {
+            display: flex;
+            align-items: center;
+
+            .image-container {
+                max-height: 100vh;
+                display: flex;
+                justify-content: flex-end;
+
+                img {
+                    max-height: 80vh;
+                    max-width: 100%;
+                    box-shadow: $shadow;
+                    @include radius(20px);
+                }
+            }
+
+            .seminar-title {
+                font-size: 3rem;
+                margin: 2.5rem 0 0;
+                line-height: 3rem;
+            }
+
+            .seminar-details, .seminar-people, .seminar-duration {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .seminar-contents {
+                li {
+                    margin: .25rem 0;
+                }
+            }
+
+            .seminar-duration {
+                margin: 1rem 0 2rem;
+                padding: .75rem 1.5rem;
+                box-shadow: $shadow;
+                @include radius(8px);
+
+                p {
+                    margin: 0;
+                }
+
+                span {
+                    font-weight: 700;
+                    color: $saturated-sky;
+                }
+            }
+
+            .seminar-people ul {
+                list-style-type: disc;
+
+                &:first-child {
+                    background-color: $saturated-sky;
+                    color: white;
+                    padding: .5rem 1rem;
+                    @include radius(8px);
+                }
+
+                li {
+                    margin-left: 1rem;
+                }
+            }
+
+            .button {
+                display: block;
+                margin: 2rem auto;
+                background-color: $coral;
+                border-bottom-color: $brushetta-tomato
             }
         }
     }

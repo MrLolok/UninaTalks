@@ -95,6 +95,20 @@
             width: 50%;
         }
 
+        &#seminar .col-full {
+            flex-wrap: wrap;
+            .col-lg {
+                width: 100%;
+
+                &.image-container {
+                    justify-content: space-around;
+                    img {
+                        margin: 2rem 0;
+                    }
+                }
+            }
+        }
+
         &#contacts .contacts-wrapper {
             div.col-md {
                 width: 50%;
@@ -129,6 +143,10 @@
                     width: 80%;
                 }
             }
+        }
+        
+        &#seminar .seminar-people .col-md {
+            width: 40%;
         }
     }
 }
@@ -205,6 +223,25 @@
 
             div.col-md {
                 width: 100%;
+            }
+        }
+        
+        &#seminar .col-full {
+            .seminar-title {
+                margin-top: 4rem;
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+
+            .seminar-details {
+                flex-direction: column;
+            }
+            
+            .seminar-people {
+                flex-wrap: wrap;
+                .col-md {
+                    width: 100%;
+                }
             }
         }
     }

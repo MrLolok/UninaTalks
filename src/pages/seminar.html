@@ -4,6 +4,54 @@
     <body>
         <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/modals/seminar-booking.html") %>
         <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/navbar.html") %>
+        <section id="seminar">
+            <div class="col-full">
+                <div class="col-lg seminar-information">
+                    <h1 class="seminar-title">Come creare un server Minecraft</h1>
+                    <ul class="seminar-details">
+                        <li>📆 Data: <b>30/02/24</b></li>
+                        <li>⏰ Orario: <b>12:00</b></li>
+                        <li>📍 Luogo: <b>Aula A2 (Monte Sant'Angelo)</b></li>
+                    </ul>
+                    <div class="spacer"></div>
+                    <div class="seminar-description">
+                        <h2>Descrizione</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3>Contenuti utili</h3>
+                        <ol class="seminar-contents">
+                            <li>Java SDK <a href="https://www.oracle.com/it/java/technologies/downloads/" target="_blank">Download</a></li>
+                            <li>IDE utilizzato <a href="https://www.jetbrains.com/idea/download/?section=windows" target="_blank">IntelliJ</a></li>
+                            <li>Minecraft server software <a href="https://papermc.io/downloads/paper" target="_blank">PaperMC</a></li>
+                        </ol>
+                        <div class="seminar-duration">
+                            <p>Durata stimata:</p>
+                            <span>2 ore</span>
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="seminar-people">
+                        <ul class="col-md">
+                            <b>Relatori</b>
+                            <li>Lorenzo Angelino</li>
+                            <li>Francesco Garifo</li>
+                        </ul>
+                        <ul class="col-md">
+                            <b>Organizzatori</b>
+                            <li>Giulio Borriello</li>
+                            <li>Lucia Brando</li>
+                            <li>Giulia Caputo</li>
+                            <li>Celeste Dazzi</li>
+                            <li>Lucia Granata</li>
+                            <li>Matteo Rocco</li>
+                        </ul>
+                    </div>
+                    <button onclick="setModalDisplay('seminar-booking-modal', true)" class="button big">Prenotati ➜</button>
+                </div>
+                <div class="col-lg image-container">
+                    <img src="assets/images/seminars/minecraft.webp" alt="Immagine seminario">
+                </div>
+            </div>
+        </section>
         <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/footer.html") %>
     </body>
 </html>
