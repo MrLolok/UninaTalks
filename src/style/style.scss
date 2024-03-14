@@ -269,7 +269,8 @@ section {
                 display: block;
                 margin: 2rem auto;
                 background-color: $coral;
-                border-bottom-color: $brushetta-tomato
+                border-bottom-color: $brushetta-tomato;
+                box-shadow: 0 0 10px 8px rgba(251, 136, 90, .2);
             }
         }
     }

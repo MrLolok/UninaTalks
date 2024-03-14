@@ -1,27 +1,64 @@
 @keyframes bounce {
-    0%, 100% {
-      transform:translateY(-25%);
-      animation-timing-function:cubic-bezier(.8,0,1,1)
-    }
-    50% {
-      transform:none;
-      animation-timing-function:cubic-bezier(0,0,.2,1)
-    }
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(.8, 0, 1, 1)
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, .2, 1)
+  }
 }
 
 .animate-bounce {
-    animation: bounce 1s infinite
+  animation: bounce 1s infinite
 }
 
 @keyframes fade {
   0% {
     opacity: .2;
-  } 
+  }
+
   100% {
     opacity: 1;
   }
 }
 
 .fade {
-    animation: fade .5s linear;
+  animation: fade .5s linear;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  30% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+
+  70% {
+    transform: translateY(0);
+  }
+}
+
+.jump {
+  animation: jump 2s ease-out 0s infinite;
 }

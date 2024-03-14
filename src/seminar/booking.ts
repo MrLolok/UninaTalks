@@ -22,7 +22,7 @@ export async function sendSeminarBooking(): Promise<void> {
             del.push(key);
     });
     del.forEach((key: string) => content.delete(key));
-    if (!content.has("name") || !content.has("surname")) {
+    if (!content.has("fullname")) {
         notify("Inserisci il tuo nome completo.", 5000, true);
         return;
     }
