@@ -1,3 +1,4 @@
+import { setModalDisplay } from "../modal";
 import { notify } from "../notifier";
 const ID = "seminar-booking-form";
 
@@ -30,11 +31,8 @@ export async function sendSeminarBooking(): Promise<void> {
         notify("Inserisci la tua email.", 5000, true);
         return;
     }
-    if (!content.has("phone")) {
-        notify("Inserisci il tuo numero di telefono.", 5000, true);
-        return;
-    }
     form.reset();
+    setModalDisplay('seminar-booking-modal', false);
     fetch('booking.php', {
         method: 'POST',
         headers: {

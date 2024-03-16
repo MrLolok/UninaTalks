@@ -1,3 +1,4 @@
+import { setModalDisplay } from "../modal";
 import { notify } from "../notifier";
 const ID = "seminar-creation-form";
 export async function sendSeminarProposal(): Promise<void> {
@@ -38,6 +39,7 @@ export async function sendSeminarProposal(): Promise<void> {
         return;
     }
     form.reset();
+    setModalDisplay('seminar-creation-modal', false);
     fetch('seminars.php', {
         method: 'POST',
         headers: {

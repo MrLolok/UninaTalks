@@ -26,6 +26,16 @@ section {
         flex-direction: row;
     }
 
+    .section-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        img {
+            width: 100%;
+        }
+    }
+
     &#home {
         margin-top: 0;
         background-image: url('../../assets/waves.svg');
@@ -41,7 +51,7 @@ section {
             color: white;
 
             h1 {
-                font-size: 5rem;
+                font-size: 3.5rem;
                 font-weight: 900;
                 margin: 0;
             }
@@ -50,7 +60,7 @@ section {
                 font-size: 1.5rem;
                 margin: 2.75rem 0 3.5rem;
                 line-height: 30px;
-                max-width: 80%;
+                max-width: 90%;
             }
 
             .button {
@@ -71,16 +81,6 @@ section {
     }
 
     &#about {
-        #image {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            
-            img {
-                width: 100%;
-            }
-        }
-
         .goal, .stats .stat {
             padding: .5rem 1.5rem;
             box-shadow: $shadow;
@@ -114,35 +114,83 @@ section {
     }
 
     &#seminars {
-        .rewards .reward {
-            margin: .75rem 0;
-            svg {
-                position: relative;
-                top: 2px;
-                max-width: 1rem;
-                max-height: 1rem;
+        .seminars-creation {
+            display: flex;
+            justify-content: space-around;
+            margin: 5rem 0;
+
+            .note {
+                background-color: rgba(83, 82, 237, .2);
                 color: $saturated-sky;
-                margin: 0 .5rem 0;
+                padding: .5rem 1rem;
+                font-size: 16px;
+                box-shadow: $shadow;
+                @include radius(8px);
+
+                h3 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+
+                h3, p {
+                    margin: 0;
+                }
+            }
+
+            .rewards .reward {
+                margin: .75rem 0;
+                svg {
+                    position: relative;
+                    top: 2px;
+                    max-width: 1rem;
+                    max-height: 1rem;
+                    color: $saturated-sky;
+                    margin: 0 .5rem 0;
+                }
+            }
+
+            .seminar-creation-button {
+                position: relative;
+                display: block;
+                margin: 2rem auto;
+                font-size: 1.2rem;
+                min-width: 250px;
+                &::after {
+                    content: "Proponi seminario";
+                    background: $bright-greek;
+                    display: block;
+                    font-size: .75rem;
+                    margin-left: calc(25% - 4rem);
+                    margin-top: 10px;
+                    padding: 2px 1.5rem .5rem;
+                    position: absolute;
+                    width: 50%;
+                    @include radius(20px, true);
+                }
             }
         }
 
-        .seminar-creation-button {
-            position: relative;
-            display: block;
-            margin: 2rem auto;
-            font-size: 1.2rem;
-            min-width: 250px;
-            &::after {
-                content: "Crea seminario";
-                background: $bright-greek;
-                display: block;
-                font-size: .75rem;
-                margin-left: calc(30% - 4rem);
-                margin-top: 10px;
-                padding: 2px 1.5rem .5rem;
-                position: absolute;
-                width: 40%;
-                @include radius(20px, true);
+        .seminars-creation-roadmap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 66.6%;
+            margin: 0 auto;
+            text-align: center;
+
+            .spacer {
+                margin: .5rem auto 2rem;
+            }
+
+            h1 {
+                color: $primary-text-color;
+            }
+
+            p {
+                margin-top: 0;
             }
         }
     }
@@ -249,8 +297,16 @@ section {
                     color: $saturated-sky;
                 }
             }
+        }
+    }
 
-            .seminar-people ul {
+    &#seminars, &#seminar {
+        .seminar-people {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            ul {
                 list-style-type: disc;
 
                 &:first-child {
@@ -264,14 +320,14 @@ section {
                     margin-left: 1rem;
                 }
             }
+        }
 
-            .button {
-                display: block;
-                margin: 2rem auto;
-                background-color: $coral;
-                border-bottom-color: $brushetta-tomato;
-                box-shadow: 0 0 10px 8px rgba(251, 136, 90, .2);
-            }
+        .book {
+            display: block;
+            margin: 2rem auto;
+            background-color: $coral;
+            border-bottom-color: $brushetta-tomato;
+            box-shadow: 0 0 10px 8px rgba(251, 136, 90, .2);
         }
     }
 }
