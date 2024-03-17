@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/head.html") %>
+    <body>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/modals/seminar-proposal.html") %>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/navbar.html") %>
+        <section id="proposal">
+            <h1 class="header">💡 Nuovi seminari</h1>
+            <div class="spacer"></div>
+            <div class="col-full seminars-creation">
+                <div class="col-lg">
+                    <h2>Proponi il tuo seminario</h2>
+                    <p>Credi di possedere qualche conoscenza in grado di arricchire le competenze dei tuoi colleghi studenti? Non esitare a proporre il tuo seminario! Ci sono molte ricompense che potresti riscattare.</p>
+                    <div class="note">
+                        <h3>Nota</h3>
+                        <p>Di seguito sono elencate solo <b>potenziali</b> ricompense. Queste vanno definite più precisamente dal docente di riferimento insieme al coordinatore del corso di laure a cui sei iscitto</p>
+                    </div>
+                    <ul class="rewards">
+                        <li class="reward">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path></svg>Citazione sul sito ufficiale Unina.it
+                        </li>
+                        <li class="reward">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path></svg>Documento ufficiale rilasciato dall'università
+                        </li>
+                        <li class="reward">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path></svg>Open Badge
+                        </li>
+                        <li class="reward">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path></svg>Crediti formativi universitari (CFU)
+                        </li>
+                        <li class="reward">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path></svg>La gloria!
+                        </li>
+                    </ul>
+                    <button onclick="setModalDisplay('seminar-proposal-modal', true)" class="seminar-proposal-button button">Mettiti in gioco</button>
+                </div>
+                <div class="col-md section-image">
+                    <img loading="lazy" src="assets/images/proposal.webp" alt="Ideazione di seminari">
+                </div>
+            </div>
+            
+            <div class="col-xl seminars-creation-roadmap">
+                <h1>Roadmap per la creazione di seminari</h1>
+                <p>La scelta dell'argomento è altrettanto importante quanto i contenuti che verranno presentati. Assicurati che il tuo seminario sia adatto ad un pubblico di studenti universitari</p>
+                <div class="spacer"></div>
+                <img loading="lazy" src="assets/images/roadmap.svg" alt="Roadmap creazione seminario" id="roadmap">
+            </div>
+        </section>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/footer.html") %>
+    </body>
+</html>

@@ -20,6 +20,12 @@ section {
         @include radius(16px);
     }
 
+    h1.header {
+        font-size: 3rem;
+        margin: 2.5rem 0 1rem;
+        line-height: 3rem;
+    }
+
     .section-contents {
         display: flex;
         justify-content: space-around;
@@ -34,6 +40,15 @@ section {
         img {
             width: 100%;
         }
+    }
+
+    .note {
+        background-color: rgba(83, 82, 237, .2);
+        color: $saturated-sky;
+        padding: .5rem 1rem;
+        font-size: 16px;
+        box-shadow: $shadow;
+        @include radius(8px);
     }
 
     &#home {
@@ -114,93 +129,56 @@ section {
     }
 
     &#seminars {
-        .seminars-creation {
-            display: flex;
-            justify-content: space-around;
-            margin: 5rem 0;
-
-            .note {
-                background-color: rgba(83, 82, 237, .2);
-                color: $saturated-sky;
-                padding: .5rem 1rem;
-                font-size: 16px;
-                box-shadow: $shadow;
-                @include radius(8px);
-
-                h3 {
-                    font-size: 1rem;
-                }
-
-                p {
-                    font-size: 13px;
-                }
-
-                h3, p {
-                    margin: 0;
-                }
-            }
-
-            .rewards .reward {
-                margin: .75rem 0;
-                svg {
-                    position: relative;
-                    top: 2px;
-                    max-width: 1rem;
-                    max-height: 1rem;
-                    color: $saturated-sky;
-                    margin: 0 .5rem 0;
-                }
-            }
-
-            .seminar-creation-button {
-                position: relative;
-                display: block;
-                margin: 2rem auto;
-                font-size: 1.2rem;
-                min-width: 250px;
-                &::after {
-                    content: "Proponi seminario";
-                    background: $bright-greek;
-                    display: block;
-                    font-size: .75rem;
-                    margin-left: calc(25% - 4rem);
-                    margin-top: 10px;
-                    padding: 2px 1.5rem .5rem;
-                    position: absolute;
-                    width: 50%;
-                    @include radius(20px, true);
-                }
-            }
-        }
-
-        .seminars-creation-roadmap, .slideshow-info-container {
+        .slideshow-info-container {
             display: flex;
             flex-direction: column;
-        }
-
-        .slideshow-info-container {
             justify-content: center;
+
+            .slide-info {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.2rem;
+                }
+            }
         }
 
-        .seminars-creation-roadmap {
-            align-items: center;
-            margin: 0 auto;
+        .seminar-proposal-visit-button {
+            position: relative;
+            display: block;
+            margin: 3rem auto 0;
+            min-width: 250px;
             text-align: center;
+            z-index: 1;
 
-            .spacer {
-                margin: .5rem auto 2rem;
+            &::before {
+                content: "";
+                background: rgba(83, 82, 237, .5);
+                width: 80vw;
+                height: 2px;
+                margin: 0 auto;
+                top: 30px;
+                left: calc(-40vw + 160px);
+                right: 0;
+                z-index: -1;
             }
 
-            h1 {
-                color: $primary-text-color;
+            &::after {
+                content: "Scopri come";
+                background: $bright-greek;
+                display: block;
+                font-size: .75rem;
+                margin-left: calc(25% - 4rem);
+                margin-top: 10px;
+                padding: 2px 1.5rem .5rem;
+                width: 50%;
             }
-
-            p {
-                margin-top: 0;
-            }
-
-            img {
-                width: 100%;
+            
+            &::before, &::after {
+                position: absolute;
+                @include radius(20px, true);
             }
         }
     }
@@ -274,12 +252,6 @@ section {
                 }
             }
 
-            .seminar-title {
-                font-size: 3rem;
-                margin: 2.5rem 0 0;
-                line-height: 3rem;
-            }
-
             .seminar-details, .seminar-people, .seminar-duration {
                 display: flex;
                 justify-content: space-between;
@@ -338,6 +310,89 @@ section {
             background-color: $coral;
             border-bottom-color: $brushetta-tomato;
             box-shadow: 0 0 10px 8px rgba(251, 136, 90, .2);
+        }
+    }
+
+    &#proposal {
+        .seminars-creation {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 5rem;
+
+            .note {
+                h3 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+
+                h3, p {
+                    margin: 0;
+                }
+            }
+
+            .rewards .reward {
+                margin: .75rem 0;
+                svg {
+                    position: relative;
+                    top: 2px;
+                    max-width: 1rem;
+                    max-height: 1rem;
+                    color: $saturated-sky;
+                    margin: 0 .5rem 0;
+                }
+            }
+
+            .seminar-proposal-button {
+                position: relative;
+                display: block;
+                margin: 2rem auto;
+                font-size: 1.2rem;
+                min-width: 250px;
+                &::after {
+                    content: "Proponi seminario";
+                    background: $bright-greek;
+                    display: block;
+                    font-size: .75rem;
+                    margin-left: calc(25% - 4rem);
+                    margin-top: 10px;
+                    padding: 2px 1.5rem .5rem;
+                    position: absolute;
+                    width: 50%;
+                    @include radius(20px, true);
+                }
+            }
+        }
+
+        .seminars-creation-roadmap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            padding: 2rem 4rem;
+            text-align: center;
+            margin: 0 auto 4rem;
+            border-bottom: 5px solid $light-white;
+            box-shadow: $shadow;
+            @include radius(16px);
+
+            .spacer {
+                margin: .5rem auto 2rem;
+            }
+
+            h1 {
+                color: $primary-text-color;
+            }
+
+            p {
+                margin-top: 0;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ const config = {
     entry: {
         home: './src/home/app.home.ts',
         seminar: './src/seminar/app.seminar.ts',
+        proposal: './src/proposal/app.proposal.ts',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -37,6 +38,15 @@ const config = {
             filename: 'seminar.html',
             template: './src/pages/seminar.html',
             chunks: ["seminar"],
+            minify: true,
+            HTML_COMPONENTS_PATH: HTMLComponentsPath,
+            GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY,
+            GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'proposal.html',
+            template: './src/pages/proposal.html',
+            chunks: ["proposal"],
             minify: true,
             HTML_COMPONENTS_PATH: HTMLComponentsPath,
             GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY,
@@ -68,7 +78,7 @@ const config = {
                     type: "css/mini-extract",
                     name: "styles_common",
                     chunks: (chunk) => {
-                        return chunk.name === "home" || chunk.name === "seminar";
+                        return chunk.name === "home" || chunk.name === "seminar" || chunk.name === "proposal";
                     },
                     enforce: true,
                 }

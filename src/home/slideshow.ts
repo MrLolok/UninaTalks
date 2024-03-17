@@ -1,4 +1,4 @@
-const DELAY = 10_000;
+const DELAY = 15_000;
 let slide = 1;
 
 const getSlideChangeTask = (): NodeJS.Timeout => {

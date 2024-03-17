@@ -38,8 +38,21 @@
             }
         }
 
-        &#seminars .slideshow {
-            width: 40%;
+        &#seminars {
+            .slideshow {
+                width: 40%;
+            }
+
+            .seminar-proposal-visit-button {
+                &::before {
+                    width: 90vw;
+                    left: calc(-45vw + 135px);
+                }
+            }
+        }
+
+        &#proposal .seminars-creation-roadmap {
+            width: 100%;
         }
     }
 }
@@ -57,12 +70,6 @@
 
             .stat {
                 width: 40%;
-            }
-        }
-
-        &#seminars {
-            .seminars-creation-roadmap {
-                width: 100%;
             }
         }
     }
@@ -96,18 +103,17 @@
             }
         }
 
-        &#seminars {
-            .seminars-creation {
-                flex-wrap: wrap;
-                gap: 5vw;
+        &#seminars .slideshow {
+            width: 50%;
+        }
 
-                div:first-child {
-                    width: 100%;
-                }
-            }
+        &#proposal .seminars-creation {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5vw;
 
-            .slideshow {
-                width: 50%;
+            div:first-child {
+                width: 100%;
             }
         }
 
@@ -166,6 +172,12 @@
                 width: 40%;
             }
         }
+
+        &#proposal .seminars-creation-roadmap {
+            padding: 0;
+            box-shadow: none;
+            border: none;
+        }
     }
 }
 
@@ -189,6 +201,12 @@
     section {
         .section-image {
             width: 80%;
+        }
+
+        .header {
+            margin-top: 4rem;
+            font-size: 2rem;
+            line-height: 2rem;
         }
 
         &#home {
@@ -226,13 +244,21 @@
             }
         }
 
-        &#seminars .section-contents .slideshow {
-            width: 90%;
-            .slide {
-                box-shadow: $shadow;
+        &#seminars {
+            .section-contents .slideshow {
+                width: 90%;
+                .slide {
+                    box-shadow: $shadow;
+                }
+                .col-lg {
+                    width: 100%;
+                }
             }
-            .col-lg {
-                width: 100%;
+
+            .seminar-proposal-visit-button {
+                &::before {
+                    background: none;
+                }
             }
         }
 
@@ -244,16 +270,8 @@
             }
         }
         
-        &#seminar .col-full {
-            .seminar-title {
-                margin-top: 4rem;
-                font-size: 2rem;
-                line-height: 2rem;
-            }
-
-            .seminar-details {
-                flex-direction: column;
-            }
+        &#seminar .seminar-details {
+            flex-direction: column;
         }
             
         &#seminars, &#seminar {

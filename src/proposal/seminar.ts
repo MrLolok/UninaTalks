@@ -39,7 +39,7 @@ export async function sendSeminarProposal(): Promise<void> {
         return;
     }
     form.reset();
-    setModalDisplay('seminar-creation-modal', false);
+    setModalDisplay('seminar-proposal-modal', false);
     fetch('seminars.php', {
         method: 'POST',
         headers: {
