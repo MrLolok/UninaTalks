@@ -49,7 +49,7 @@ const config = {
                     noErrorOnMissing: true,
                     globOptions: {
                         dot: true,
-                        ignore: ["**/.htaccess", "**/browserconfig.xml", "**/sitemap.xml"]
+                        ignore: ["**/.htaccess", "**/browserconfig.xml", "**/sitemap.xml", "**/favicon.ico"]
                     }
                 },
                 {
