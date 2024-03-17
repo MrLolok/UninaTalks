@@ -1,4 +1,4 @@
-const DELAY = 5000;
+const DELAY = 10_000;
 let slide = 1;
 
 const getSlideChangeTask = (): NodeJS.Timeout => {
@@ -35,22 +35,32 @@ export const setSlidesRedirect = (): void => {
         const element: HTMLElement = slides[i] as HTMLElement;
         const redirect: string | null = element.getAttribute("data-redirect");
         if (redirect)
-            element.onclick = () => window.location.href = `${redirect}`
+            element.onclick = () => window.location.href = redirect;
     }
 }
 
 export const showSlide = (index: number): void => {
     const slides: HTMLCollectionOf<Element> = document.getElementsByClassName("slide");
+    const info: HTMLCollectionOf<Element> = document.getElementsByClassName("slide-info");
     const dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dot");
     if (index > slides.length)
         slide = 1;
     else if (index < 1)
         slide = slides.length;
 
-    for (let i = 0; i < slides.length; i++)
+    for (let i = 0; i < slides.length; i++) {
         (slides[i] as HTMLElement).style.display = "none";
+        (info[i] as HTMLElement).style.display = "none";
+    }
     for (let i = 0; i < dots.length; i++)
         dots[i].classList.remove("active");
-    (slides[slide-1] as HTMLElement).style.display = "block";  
     (dots[slide-1] as HTMLElement).classList.add("active");
+    (info[slide-1] as HTMLElement).style.display = "block";
+    const currentSlide: HTMLElement = slides[slide-1] as HTMLElement;
+    currentSlide.style.display = "block";
+    const redirect = currentSlide.getAttribute("data-redirect");
+    if (redirect) {
+        const button: HTMLButtonElement = document.getElementById("view-seminar-button") as HTMLButtonElement;
+        button.onclick = () => window.location.href = redirect;
+    }
 }
