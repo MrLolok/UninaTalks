@@ -32,5 +32,4 @@ window.onload = () => {
     setRoadmap();
 };
 
-window.onload = () => setRoadmap();
 window.onresize = () => setRoadmap();
