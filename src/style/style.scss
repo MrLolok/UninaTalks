@@ -148,12 +148,12 @@ section {
         .seminar-proposal-visit-button {
             position: relative;
             display: block;
-            margin: 3rem auto 0;
+            margin: 5rem auto 0;
             min-width: 250px;
             text-align: center;
             z-index: 1;
 
-            &::before {
+            /**&::before {
                 content: "";
                 background: rgba(83, 82, 237, .5);
                 width: 80vw;
@@ -163,10 +163,10 @@ section {
                 left: calc(-40vw + 160px);
                 right: 0;
                 z-index: -1;
-            }
+            }**/
 
             &::after {
-                content: "Scopri come";
+                content: "Clicca per scoprire come";
                 background: $bright-greek;
                 display: block;
                 font-size: .75rem;

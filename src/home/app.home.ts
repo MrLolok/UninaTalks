@@ -5,12 +5,13 @@ import "../style/style.scss";
 import { setAnchorsLink } from "../anchors"
 import { sendContactMessage } from "./contact"
 import { sendSeminarProposal } from "../proposal/seminar"
-import { changeSlideIndex, setSlideIndex, setSlidesCounter, setSlidesRedirect, showSlide } from "./slideshow"
+import { changeSlideIndex, setSlideIndex, setSlidesCounter, setSlidesRedirect, setSlidesChangeButtons, showSlide } from "./slideshow"
 
 /** INITIALIZE AND REGISTER FUNCTIONS */
 // Slideshow
 setSlidesCounter();
 setSlidesRedirect();
+setSlidesChangeButtons();
 // Navigation anchors
 setAnchorsLink();
 

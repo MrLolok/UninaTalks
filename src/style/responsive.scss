@@ -48,6 +48,11 @@
                     width: 90vw;
                     left: calc(-45vw + 135px);
                 }
+        
+                &::after {
+                    margin-left: calc(20% - 4rem);
+                    width: 60%;
+                }
             }
         }
 
