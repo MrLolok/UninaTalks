@@ -2,34 +2,34 @@
 <html lang="it">
     <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/head.html") %>
     <body>
-        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/modals/seminar-booking.html") %>
+        <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/modals/event-booking.html") %>
         <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_COMPONENTS_PATH + "/navbar.html") %>
-        <section id="seminar">
+        <section id="event">
             <div class="col-full">
-                <div class="col-lg seminar-information">
+                <div class="col-lg event-information">
                     <h1 class="header">Come creare un server Minecraft</h1>
-                    <ul class="seminar-details">
-                        <li>📆 Data: <b>07/05/24</b></li>
-                        <li>⏰ Orario: <b>16:30</b></li>
-                        <li>📍 Luogo: <b>CL-T-3 (Via Claudio 21)</b></li>
+                    <ul class="event-details">
+                        <li>📆 Data: <b>21/05/24</b></li>
+                        <li>⏰ Orario: <b>Da definire</b></li>
+                        <li>📍 Luogo: <b>CL-I3 (Via Claudio 21)</b></li>
                     </ul>
                     <div class="spacer"></div>
-                    <div class="seminar-description">
+                    <div class="event-description">
                         <h2>Descrizione</h2>
                         <p>Partecipa al nostro seminario sui server Minecraft. Ti guideremo attraverso il processo di sviluppo dei plugin per <b>creare il tuo server di gioco</b>, che potrai poi lanciare sul mercato!<br><br>Inizieremo discutendo i requisiti fondamentali, come l'IDE e Java, poi ci immergeremo nella creazione di un server. Esploreremo i vari software di “Minecraft Server” e le diverse meccaniche che possono essere aggiunte o modificate.<br><br>Successivamente, ci concentreremo sull'aspetto più entusiasmante: lo <b>sviluppo dei plugin</b>. Imparerai a creare comandi personalizzati, gestire gli inventari, creare oggetti di gioco personalizzati, creare GUI e gestire gli eventi del server. Inoltre, approfondirai la manipolazione delle entità e la gestione delle tasks per ottimizzare le prestazioni del plugin. Questo seminario offre un'opportunità unica per acquisire competenze pratiche nella creazione di plugin e server Minecraft.</p>
                         <h3>Contenuti utili</h3>
-                        <ol class="seminar-contents">
+                        <ol class="event-contents">
                             <li>Java SDK <a href="https://www.oracle.com/it/java/technologies/downloads/" target="_blank">Download</a></li>
                             <li>IDE utilizzato <a href="https://www.jetbrains.com/idea/download/?section=windows" target="_blank">IntelliJ</a></li>
                             <li>Minecraft server software <a href="https://papermc.io/downloads/paper" target="_blank">PaperMC</a></li>
                         </ol>
-                        <div class="seminar-duration">
+                        <div class="event-duration">
                             <p>Durata stimata:</p>
-                            <span>2 ore</span>
+                            <span>2 settimane</span>
                         </div>
                     </div>
                     <div class="spacer"></div>
-                    <div class="seminar-people">
+                    <div class="event-people">
                         <ul class="col-md">
                             <b>Relatori</b>
                             <li>Lorenzo Angelino</li>
@@ -45,10 +45,10 @@
                             <li>Matteo Rocco</li>
                         </ul>
                     </div>
-                    <button onclick="setModalDisplay('seminar-booking-modal', true)" class="book button big jump">Prenotati ➜</button>
+                    <button onclick="setModalDisplay('event-booking-modal', true)" class="book button big jump">Prenotati ➜</button>
                 </div>
                 <div class="col-lg image-container">
-                    <img src="assets/images/seminars/minecraft.webp" alt="Immagine seminario">
+                    <img src="assets/images/events/seminar-minecraft.webp" alt="Immagine seminario">
                 </div>
             </div>
         </section>

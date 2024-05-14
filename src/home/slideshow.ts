@@ -84,7 +84,7 @@ export const showSlide = (index: number): void => {
     active_slide.style.display = "block";
     const redirect = active_slide.getAttribute("data-redirect");
     if (redirect) {
-        const button: HTMLButtonElement = document.getElementById("view-seminar-button") as HTMLButtonElement;
+        const button: HTMLButtonElement = document.getElementById("view-event-button") as HTMLButtonElement;
         button.onclick = () => window.location.href = redirect;
     }
 }

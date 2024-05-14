@@ -1,12 +1,12 @@
 import { setModalDisplay } from "../modal";
 import { notify } from "../notifier";
-const ID = "seminar-booking-form";
+const ID = "event-booking-form";
 
-export async function sendSeminarBooking(): Promise<void> {
+export async function sendEventBooking(): Promise<void> {
     const params = new URLSearchParams(window.location.search);
-    const seminar = params.get("id");
-    if (!seminar) {
-        notify("Seminario non trovato.", 5000, true);
+    const event = params.get("id");
+    if (!event) {
+        notify("Evento non trovato.", 5000, true);
         return;
     }
 
@@ -16,7 +16,7 @@ export async function sendSeminarBooking(): Promise<void> {
         return;
     }
     const content = new URLSearchParams(new FormData(form) as any);
-    content.append("seminar", seminar);
+    content.append("event", event);
     let del: Array<string> = [];
     content.forEach((value: string, key: string) => {
         if (value == '')
@@ -32,7 +32,7 @@ export async function sendSeminarBooking(): Promise<void> {
         return;
     }
     form.reset();
-    setModalDisplay('seminar-booking-modal', false);
+    setModalDisplay('event-booking-modal', false);
     fetch('booking.php', {
         method: 'POST',
         headers: {

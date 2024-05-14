@@ -13,7 +13,7 @@ const HTMLComponentsPath = path.resolve(__dirname, "./src/components/");
 const config = {
     entry: {
         home: './src/home/app.home.ts',
-        seminar: './src/seminar/app.seminar.ts',
+        event: './src/event/app.event.ts',
         proposal: './src/proposal/app.proposal.ts',
     },
     output: {
@@ -35,9 +35,18 @@ const config = {
             GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
         }),
         new HtmlWebpackPlugin({
-            filename: 'seminar.html',
-            template: './src/pages/seminar.html',
-            chunks: ["seminar"],
+            filename: 'seminar-minecraft.html',
+            template: './src/pages/seminar-minecraft.html',
+            chunks: ["event"],
+            minify: true,
+            HTML_COMPONENTS_PATH: HTMLComponentsPath,
+            GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY,
+            GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'hackathon-minecraft.html',
+            template: './src/pages/hackathon-minecraft.html',
+            chunks: ["event"],
             minify: true,
             HTML_COMPONENTS_PATH: HTMLComponentsPath,
             GOOGLE_RECAPTCHA_KEY: process.env.GOOGLE_RECAPTCHA_KEY,
@@ -78,7 +87,7 @@ const config = {
                     type: "css/mini-extract",
                     name: "styles_common",
                     chunks: (chunk) => {
-                        return chunk.name === "home" || chunk.name === "seminar" || chunk.name === "proposal";
+                        return chunk.name === "home" || chunk.name === "event" || chunk.name === "proposal";
                     },
                     enforce: true,
                 }

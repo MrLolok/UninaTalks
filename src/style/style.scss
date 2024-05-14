@@ -128,7 +128,7 @@ section {
         }
     }
 
-    &#seminars {
+    &#events {
         .slideshow-info-container {
             display: flex;
             flex-direction: column;
@@ -234,7 +234,7 @@ section {
         }
     }
 
-    &#seminar {
+    &#event {
         .col-full {
             display: flex;
             align-items: center;
@@ -252,19 +252,19 @@ section {
                 }
             }
 
-            .seminar-details, .seminar-people, .seminar-duration {
+            .event-details, .event-people, .event-duration {
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
             }
 
-            .seminar-contents {
+            .event-contents {
                 li {
                     margin: .25rem 0;
                 }
             }
 
-            .seminar-duration {
+            .event-duration {
                 margin: 1rem 0 2rem;
                 padding: .75rem 1.5rem;
                 box-shadow: $shadow;
@@ -282,8 +282,8 @@ section {
         }
     }
 
-    &#seminars, &#seminar {
-        .seminar-people {
+    &#events, &#event {
+        .event-people {
             display: flex;
             justify-content: space-between;
             align-items: baseline;

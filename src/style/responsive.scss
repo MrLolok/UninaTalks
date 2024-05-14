@@ -38,7 +38,7 @@
             }
         }
 
-        &#seminars {
+        &#events {
             .slideshow {
                 width: 40%;
             }
@@ -108,7 +108,7 @@
             }
         }
 
-        &#seminars .slideshow {
+        &#events .slideshow {
             width: 50%;
         }
 
@@ -122,7 +122,7 @@
             }
         }
 
-        &#seminar .col-full {
+        &#event .col-full {
             flex-wrap: wrap;
             .col-lg {
                 width: 100%;
@@ -154,7 +154,7 @@
     }
 
     section {
-        &#seminars {
+        &#events {
             .section-contents {
                 flex-wrap: wrap;
                 gap: 5vw;
@@ -172,8 +172,8 @@
             }
         }
         
-        &#seminars, &#seminar {
-            .seminar-people .col-md {
+        &#events, &#event {
+            .event-people .col-md {
                 width: 40%;
             }
         }
@@ -249,7 +249,7 @@
             }
         }
 
-        &#seminars {
+        &#events {
             .section-contents .slideshow {
                 width: 90%;
                 .slide {
@@ -275,12 +275,12 @@
             }
         }
         
-        &#seminar .seminar-details {
+        &#event .event-details {
             flex-direction: column;
         }
             
-        &#seminars, &#seminar {
-            .seminar-people {
+        &#events, &#event {
+            .event-people {
                 flex-wrap: wrap;
                 .col-md {
                     width: 100%;
@@ -309,7 +309,7 @@
             }
         }
 
-        &#seminars .section-contents {
+        &#events .section-contents {
             gap: 10vw;
             .slideshow {
                 width: 100%;

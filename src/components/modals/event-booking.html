@@ -1,16 +1,16 @@
-<div id="seminar-booking-modal" class="modal">
+<div id="event-booking-modal" class="modal">
     <div class="modal-content">
-        <span onclick="setModalDisplay('seminar-booking-modal', false)" class="close">&times;</span>
-        <h2>Prenotati per questo seminario</h2>
+        <span onclick="setModalDisplay('event-booking-modal', false)" class="close">&times;</span>
+        <h2>Prenotati per questo evento</h2>
         <p>Invia la tua richiesta di partecipazione prima che si esauriscano i posti.</p>
-        <form onsubmit="event.preventDefault()" id="seminar-booking-form" action="/" method="post">
+        <form onsubmit="event.preventDefault()" id="event-booking-form" action="/" method="post">
             <label for="fullname">Nome completo</label>
             <input type="text" name="fullname" placeholder="Mario Rossi" autocomplete="name">
             <label for="email">Email</label>
             <input type="email" name="email" placeholder="mario.rossi@email.com" autocomplete="email">
             <label for="notes">Note (Facoltativo)</label>
             <textarea name="notes" placeholder="Aggiungi note che dovremo tenere in considerazione"></textarea>
-            <button class="button g-recaptcha" data-sitekey="6LcYhpUpAAAAAOKdl68TklDuBedWDK9p_LCgu2_s" data-callback="sendSeminarBooking" data-action='submit'>Invia</button>
+            <button class="button g-recaptcha" data-sitekey="6LcYhpUpAAAAAOKdl68TklDuBedWDK9p_LCgu2_s" data-callback="sendEventBooking" data-action='submit'>Invia</button>
         </form>
     </div>
 </div>
